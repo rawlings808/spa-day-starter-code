@@ -1,8 +1,21 @@
 package org.launchcode.spaday.models;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 public class User {
+
+    @NotEmpty(message = "Username is required.")
+    @Size(min = 5, max = 15)
     private String username;
+
+    @Email(message = "Invalid email address.")
     private String email;
+
+    @NotEmpty(message = "Password is required.")
+    @Size(min = 6)
+
     private String password;
 
     public User() {
